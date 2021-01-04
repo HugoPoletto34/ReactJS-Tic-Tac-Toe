@@ -124,7 +124,7 @@ function Square(props) {
 const App = () => {
     return (
         <div><h4>hey Index</h4>
-        <Link href="/sobre.js">
+        <Link href="/sobre">
             <a>Ola</a>
         </Link>
         </div>
