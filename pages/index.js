@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from 'next/link'
+import Style from "../css/styles.css";
 
 function Square(props) {
     return (
-      <button className="square" onClick={props.onClick}>
+      <button className={Style.square} onClick={props.onClick}>
         {props.value}
       </button>
     );
@@ -22,17 +22,17 @@ function Square(props) {
     render() {
       return (
         <div>
-          <div className="board-row">
+          <div className={Style.board_row}>
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
           </div>
-          <div className="board-row">
+          <div className={Style.board_row}>
             {this.renderSquare(3)}
             {this.renderSquare(4)}
             {this.renderSquare(5)}
           </div>
-          <div className="board-row">
+          <div className={Style.board_row}>
             {this.renderSquare(6)}
             {this.renderSquare(7)}
             {this.renderSquare(8)}
@@ -106,14 +106,14 @@ function Square(props) {
       }
   
       return (
-        <div className="game">
-          <div className="game-board">
+        <div className={Style.game}>
+          <div className={Style.game_board}>
             <Board
               squares={current.squares}
               onClick={i => this.handleClick(i)}
             />
           </div>
-          <div className="game-info">
+          <div className={Style.game_info}>
             <div>{status}</div>
             <ol>{moves}</ol>
           </div>
@@ -121,16 +121,8 @@ function Square(props) {
       );
     }
   }
-const App = () => {
-    return (
-        <div><h4>hey Index</h4>
-        <Link href="/sobre">
-            <a>Ola</a>
-        </Link>
-        </div>
-    )
-}
-export default App;
+
+export default Game;
 
 function calculateWinner(squares) {
     const lines = [
